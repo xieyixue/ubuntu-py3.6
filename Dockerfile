@@ -1,12 +1,11 @@
 FROM ubuntu
 
 RUN apt-get update \
-    apt-get install -y software-properties-common vim  openssh-server \
-    add-apt-repository ppa:jonathonf/python-3.6 \
-    apt-get update \
+    && apt-get install -y software-properties-common vim  openssh-server \
+    && add-apt-repository ppa:jonathonf/python-3.6 \
+    && apt-get update \
 
-    apt-get install -y build-essential python3.6 python3.6-dev python3-pip python3.6-venv \
-    apt-get install -y git
+    && apt-get install -y build-essential python3.6 python3.6-dev python3-pip python3.6-venv git
 
 # update pip
 RUN python3.6 -m pip install pip --upgrade
