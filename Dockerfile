@@ -12,7 +12,7 @@ RUN apt-get update \
 RUN python3.6 -m pip install pip --upgrade
 RUN python3.6 -m pip install wheel
 RUN mkdir /var/run/sshd
-RUN echo 'root:qssec.com' | chpasswd
+RUN echo 'root:password' | chpasswd
 RUN sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 
 # SSH login fix. Otherwise user is kicked off after login
